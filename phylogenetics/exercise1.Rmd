@@ -1,0 +1,64 @@
+---
+title: "MITII Day 4"
+author: "Erick Matsen and Trevor Bedford"
+date: "April 24, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R setup
+
+Install [apTreeshape](https://cran.r-project.org/web/packages/apTreeshape/index.html).
+```{r eval=FALSE} 
+install.packages("apTreeshape")
+```
+
+## Doing sequence alignment
+
+First we need to download the raw sequence data.
+Visit the [data page for this exercise](https://github.com/blab/mitii/tree/master/phylogenetics/data) and download the data sets.
+If you are having trouble with that, simply click [here](https://raw.githubusercontent.com/blab/mitii/master/phylogenetics/data/HIV1_REF_2010_gag_DNA.fasta) and save that page to a file.
+
+Next, visit <http://wasabiapp.org>. 
+Click on `Data -> Import` to upload your data.
+To align, click on `Tools -> PRANK aligner`.
+
+Once you have your aligned sequences, you can export them using `Data -> Export`. 
+*Important:* export your sequences in `phylip` format.
+
+
+## Building a tree
+
+We will do tree building using <http://www.atgc-montpellier.fr/phyml/>, the ATGC bioinformatics platform.
+Upload your data, enter your email address, and hit `Execute`.
+
+Once that completes, hit `Click to visualize your infered tree`.
+You can interactively play with how the tree is displayed, then download your tree in [Newick format](https://en.wikipedia.org/wiki/Newick_format).
+
+
+## Playing with your tree in R
+
+```{r, message=FALSE}
+library(apTreeshape)
+```
+
+Load the tree into R with the `read.tree` function of [ape](https://cran.r-project.org/web/packages/ape/):
+```{r}
+t = read.tree('~/file.nwk')
+t
+```
+
+We can see that the tree is unrooted, which is the norm for doing phylogenetic analysis with reversible models.
+
+The next step is to root the tree at a specific leaf:
+```{r}
+r = root(t, "Ref.A1.UG.92.92UG037.AB253429", resolve.root = TRUE)
+r
+```
+
+```{r}
+colless(as.treeshape(r))
+```
