@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ## R setup
 
 Install [apTreeshape](https://cran.r-project.org/web/packages/apTreeshape/index.html).
-```{r eval=FALSE} 
+```{r eval=FALSE}
 install.packages("apTreeshape")
 ```
 
@@ -22,11 +22,12 @@ First we need to download the raw sequence data.
 Visit the [data page for this exercise](https://github.com/blab/mitii/tree/master/phylogenetics/data) and download the data sets.
 If you are having trouble with that, simply click [here](https://raw.githubusercontent.com/blab/mitii/master/phylogenetics/data/HIV1_REF_2010_gag_DNA.fasta) and save that page to a file.
 
-Next, visit <http://wasabiapp.org>. 
+Next, visit <http://wasabiapp.org>.
+Click `Create account` to make a 1-day account (you don't need to insert your email address.)
 Click on `Data -> Import` to upload your data.
 To align, click on `Tools -> PRANK aligner`.
 
-Once you have your aligned sequences, you can export them using `Data -> Export`. 
+Once you have your aligned sequences, you can export them using `Data -> Export`.
 *Important:* export your sequences in `phylip` format.
 
 
@@ -47,18 +48,35 @@ library(apTreeshape)
 
 Load the tree into R with the `read.tree` function of [ape](https://cran.r-project.org/web/packages/ape/):
 ```{r}
-t = read.tree('~/file.nwk')
-t
+t = read.tree('processed/measles.nwk')
 ```
 
 We can see that the tree is unrooted, which is the norm for doing phylogenetic analysis with reversible models.
 
 The next step is to root the tree at a specific leaf:
 ```{r}
-r = root(t, "Ref.A1.UG.92.92UG037.AB253429", resolve.root = TRUE)
-r
+r = root(t, "AF410972|Montreal/CAN|1979", resolve.root = TRUE)
+plot(r, show.tip.label=FALSE)
 ```
 
+Now we can calculate the Colless tree shape statistic for our inferred tree:
+
 ```{r}
-colless(as.treeshape(r))
+true_colless = colless(as.treeshape(r))
+true_colless
+```
+
+Now we can compare it with 1000 simulations of a neutral process:
+
+```{r}
+n_sims = 1000
+sim_colless = sapply(rtreeshape(n_sims, length(r$tip.label), model="yule"), colless)
+hist(sim_colless)
+```
+
+Does the observed imbalance appear unusual?
+For a more quantitative comparison:
+
+```{r}
+sum(true_colless > sim_colless) / n_sims
 ```
