@@ -176,19 +176,25 @@
 <li>Evaluate likelihood under various parameter values</li>
 </ul>
 </section>
-<section id="example-picking-peaches" class="slide level1">
-<h3>Example: picking peaches</h3>
-<p>Say that, after harvesting 20 peaches, we have 6 ripe ones.</p>
-<p>Model using the <a href="http://en.wikipedia.org/wiki/Binomial_distribution">binomial distribution</a>. Say <span class="math inline">\(p\)</span> is the probability of getting a ripe peach, and each draw is independent.</p>
+<section class="slide level1">
+<h3>Example: flipping coins</h3>
+<p>Say that, after flipping a coin 20 times, we get 6 heads.</p>
+<p>Model using the <a href="http://en.wikipedia.org/wiki/Binomial_distribution">binomial distribution</a>. Say <span class="math inline">\(p\)</span> is the probability of getting a tail, and each draw is independent.</p>
 <p> </p>
 <p>The <em>likelihood</em> of getting the observed result is <span class="math display">\[
 { {20} \choose 6} \, p^6 \, (1-p)^{20-6}.
 \]</span> Recall: <span class="math inline">\({ {20} \choose 6}\)</span> is the number of ways of choosing 6 items out of 20.</p>
 </section>
-<section id="peach-picking-likelihood-surface" class="slide level1">
-<h3>Peach picking likelihood surface</h3>
-<p><img src="figures/like_intro/ripe_likelihood_nofonts.svg" height="450"></p>
-<p>The <em>maximum likelihood estimate</em> of the parameter(s) of interest is the parameter value(s) that maximize the likelihood.</p>
+<section class="slide level1">
+<h3>Exercise: likelihood surface</h3>
+<ul>
+<li> Run <code>Beta_binomial.R</code> in R </li>
+<li> Change the number of heads and tails. </li>
+<li> The <em>maximum likelihood estimate</em> of the parameter of interest is the parameter value(s) that maximize the likelihood.
+Here it's marked with a dot.
+</li>
+<li> What do you notice about the ML value when the observations are rare? </li>
+</ul>
 </section>
 <section id="likelihood-recap" class="slide level1">
 <h3>Likelihood recap</h3>
@@ -256,10 +262,18 @@ Note assumption of independence between sites!
 P(\theta \mid D) \propto P(D \mid \theta) P(\theta)
 \]</span></p>
 </section>
-<section id="the-posterior-probability-of-parameters" class="slide level1">
-<h3>The <em>posterior probability</em> of parameters</h3>
-<p><img src="figures/like_intro/ripe_posterior_nofonts.svg" height="620"></p>
+
+<section class="slide level1">
+<h3>Exercise: the prior and the posterior</h3>
+<ul>
+<li> Open <code>Beta_binomial.R</code> again. </li>
+<li> Return the number of heads and tails to zero, and click "Bayesian". </li>
+<li> Alpha and Beta are the parameters of the prior. Try changing them around. </li>
+<li> Make them such that the prior is peaked around 0.5. </li>
+<li> Now, what happens when you vary the number of heads and tails? </li>
+</ul>
 </section>
+
 <section id="the-posterior-probability-of-a-tree-is-the-probability-that-the-observed-tree-is-correct-given-the-model-and-priors" class="slide level1">
 <h3>The posterior probability of a tree is the probability that the observed tree is correct (given the model and priors)</h3>
 <ul>
