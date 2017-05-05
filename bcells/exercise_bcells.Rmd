@@ -1,0 +1,66 @@
+---
+title: "exercise_bcells.Rmd"
+author: "Erick Matsen"
+date: "May 2, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(bcRep)
+```
+
+## Getting data from IMGT
+
+We assume that you have run your data through [IMGT HighV-QUEST](http://imgt.org/HighV-QUEST/login.action).
+
+I've done that for you for samples from the Rubelt et al twins study and put them in a `.zip` archive in the `bcells/data` directory.
+Please unzip them in place.
+
+The samples are organized into twin pairs, with 1A/1B being one twin pair, and 2A/2B being another.
+All of them are from naive sorts.
+Our challenge will be to see if pairs of twins have more similar gene usage than non-twin pairs.
+
+Take a look at the files and get acquainted with their contents.
+They're complicated!
+
+
+## Using bcRep
+
+Parsing these files on our own would be a pain.
+Luckily there is an R package for that, called [bcRep](https://cran.r-project.org/web/packages/bcRep).
+
+First we get our data using the `readIMGT` function:
+
+```{r}
+aa_1a = readIMGT("~/rubelt/rubelt_naive_1A/5_AA-sequences.txt")
+aa_1b = readIMGT("~/rubelt/rubelt_naive_1B/5_AA-sequences.txt")
+aa_2a = readIMGT("~/rubelt/rubelt_naive_2A/5_AA-sequences.txt")
+aa_2b = readIMGT("~/rubelt/rubelt_naive_2B/5_AA-sequences.txt")
+```
+
+Here we can see that the `readIMGT` function has done a nice job of parsing the file.
+```{r}
+head(aa_1a, n=7)
+```
+But see that last part, with the `, or`? 
+The IMGT output isn't really meant to be parsed by a computer easily, it's meant to be read by humans.
+Luckily we can use some tools from bcRep to handle this.
+
+First we need to get all of the `V_GENE_and_allele` rows into a list.
+We can do that like so.
+```{r}
+data = list(aa_1a, aa_1b, aa_2a, aa_2b)
+names = list("aa_1a", "aa_1b", "aa_2a", "aa_2b")
+v_genes = lapply(data, function(x) x$V_GENE_and_allele)
+```
+
+Now we can make the comparison:
+```{r}
+v_gene_comp = compare.geneUsage(gene.list = v_genes, level = "subgroup", names = names)
+plotCompareGeneUsage(v_gene_comp)
+```
+What do you think?
