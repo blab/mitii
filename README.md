@@ -1,92 +1,52 @@
 # Description
 
-**Short course taught by [Sarah Cobey](http://cobeylab.uchicago.edu/) and [Trevor Bedford](http://bedford.io/) for [SISMID 2016](http://www.biostat.washington.edu/suminst/sismid).**
+**Short course taught by [Erick Matsen](http://matsen.fredhutch.org/) and [Trevor Bedford](http://bedford.io/) for [MITII 2017 Summer School on Modeling Immunology](https://scholarblogs.emory.edu/mitii/summer-school/).**
 
-This module provides an introduction to modeling antigenically diverse pathogen populations. The first part of the course will introduce multistrain compartmental models and potential mechanisms of competition. These simple models will be contrasted with models with more complex assumptions (e.g., multiple forms of immunity and spatial structure). We will review how to statistically fit multistrain models to longitudinal data from individuals and time series data from populations. The second part of the course will show how, using the coalescent as a neutral expectation, evolutionary pressures can be quantified using sequence data. We will detail bioinformatic methods to build phylogenies, quantify selective pressures and estimate pathogen population structure. Methods to measure pathogen phenotypic similarity and antigenic evolution, such as antigenic cartography, will be introduced. Assumes material from Module 2 (Mathematical Models of Infectious Diseases). Material from Module 14 (Evolutionary Dynamics and Molecular Epidemiology of Viruses) would be helpful, but not required.
+An introduction to immunity from an evolutionary perspective. We will introduce basic notions of molecular evolution, phylogenetics, and evolutionary models which will set the foundation for modeling pathogens and antibody-making B cells. We will additionally introduce multistrain compartmental models and introduce the diversity generating mechanisms of B and T cells, and survey repertoire analysis.
 
 # Outline
 
-## Day 1
+### [Serology](serology/) and [multistrain models](models/)
 
-### [Pathogen diversity](pathogens/)
-
-* Antigenically (and otherwise) variable pathogens
-* *Exercise: Assigning study groups and picking pathogens*
-
-### [Immunity and Immune-mediated competition](immunity/) 
-
-* The biological basis of antigenic diversity: innate, cellular, and humoral responses
-
-### [Serology](serology/)
-
+* Multistrain compartmental models
+* *Exercise: Dynamics of a two-strain SIR system*
 * Serological binding and neutralization data
 * Antigenic cartography
 * *Exercise: Antigenic map*
 * Original antigenic sin
-* *Exercise: Review serological data for chosen pathogens*
 
-### [Multistrain models](models/)
+### [Selection and evolution in B cells](bcells/)
 
-* Statistical, compartmental, and agent-based models
-* The many forms of competition
-* Analytic solutions
-* Numerical integration
-* *Exercise: Dynamics of a multistrain SIR system*
+* General outline of adaptive immunity
+* VDJ recombination
+* Germinal center formation and cycling
+* Somatic hypermutation and mismatch repair
+* A bit of antibody structure
 
-## Day 2
-
-### [Timeseries analysis](timeseries/)
-
-* Maximum likelihood
-* When to trust a model
-* Tips & tricks: insights from natural experiments
-* State-space reconstruction
-* *Exercise: Reviewing timeseries data for chosen pathogens*
-
-### [The coalescent and phylogenetics](sequences/)
+### [Selection](selection/) and the [coalescent](coalescent/)
 
 * Introduction to Kingman's coalescent
 * Effective population size and demographic inference
 * *Exercise: Skyline plots*
 * Effects of selection on tree topology
-* Introduction to phylogenetic inference
-* *Exercise: Parsimony reconstruction*
-* Maximum likelihood and Bayesian methods
-* *Exercise: Bayes' rule*
+* Introduction to Wright­-Fisher model
+* Tree­-based tests of selection: Tajima’s D, etc...
+* *Exercise: measles vs flu, selection and immunity*
 
-### [Selection and wright-Fisher Dynamics](selection/)
+### [Introduction to phylogenetics](phylogenetics/)
 
-* Introduction to Wright-Fisher model
-* Wright-Fisher with mutation and genetic drift
-* *Exercise: Effects of mutation and population size on population dynamics*
-* Wright-Fisher with mutation, genetic drift and selection
-* *Exercise: Effects of positive and negative selection on population dynamics*
-* Tests of selection
-* *Exercise: Reviewing genetic data for chosen pathogens*
-
-### [Forecasting](forecasting/)
-
-* Mechanistic models
-* Nonlinear forecasting
-* Fitness model projections
-
-## Day 3
-
-### [Synthesis](https://github.com/trvrb/sismid/wiki/Synthesis/)
-
-* *Exercise: Group presentations on specific pathogens*
-
-### [B cell selection and evolution](bcells/)
-
-* VDJ recombination and somatic hypermutation
-* Clonal dynamics and repertoire diversity
-* Unsolved problems and vaccine design
-
-## Resources
-
-* [Pathogen lineup](lineup/)
-* [Pathogen wiki](https://github.com/trvrb/sismid/wiki/Synthesis)
+* Sequence alignment
+* Types of phylogenetic inference methods
+* *Exercise: Parsinomy reconstruction*
+* Intro to likelihood
+* *Exercise: Likelihood surface*
+* Likelihood-based phylogenetics
+* Intro to Bayesian methods
+* *Exercise: Prior and posterior*
+* Markov-chain Monte Carlo
 
 -----------------------------------
 
-All contents including slides, course materials and code are copyright 2015-2016 Sarah Cobey and Trevor Bedford. All slides / course materials (files ending in `.html` and `.md`) are licensed under [Creative Commons Attribution 4.0](CC-LICENSE.txt) and all code (files ending in `.py` and `.ipynb`) is licensed under an [MIT License](MIT-LICENSE.txt).
+We thank [Sarah Cobey](http://cobeylab.uchicago.edu/) for generously allowing use of materials developed for her [SISMID module](http://bedford.io/projects/sismid/).
+
+All contents including slides, course materials and code are copyright 2015-2017 Sarah Cobey, Erick Matsen and Trevor Bedford. All slides / course materials (files ending in `.html` and `.md`) are licensed under [Creative Commons Attribution 4.0](CC-LICENSE.txt) and all code (files ending in `.py` and `.ipynb`) is licensed under an [MIT License](MIT-LICENSE.txt).

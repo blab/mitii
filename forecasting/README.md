@@ -1,3 +1,0 @@
-# Forecasting
-
-* [Slides](slides.html)
