@@ -9,8 +9,9 @@ An introduction to immunity from an evolutionary perspective. We will introduce 
 ### [Course introduction](intro/)
 
 * Placing pathogen / immune interactions into the larger ecological / evolutionary context
+* Strain dynamics and population turnover
 
-### [Strain dynamics](strain-dynamics/)
+### [Multistrain models and serology](models-and-serology/)
 
 * Multistrain compartmental models
 * *Exercise: Dynamics of a two-strain SIR system*

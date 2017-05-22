@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Serology</title>
+
+		<meta name="author" content="Trevor Bedford">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../reveal/css/reveal.min.css">
+		<link rel="stylesheet" href="../reveal/css/theme/trvrb.css" id="theme">
+		<link rel="stylesheet" href="../reveal/css/font-awesome/css/font-awesome.min.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="../reveal/lib/css/zenburn.css">
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div style="position: absolute; top:10px; left:10px; z-index:100;">
+			<a href="http://bedford.io/projects/sismid/serology/">
+				<i class="fa fa-times-circle" style="color: #bbb;"></i>
+			</a>
+		</div>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section data-background="#5097BA">
+					<h2 class="title">Serology</h2>
+				</section>
+
+				<section>
+					<h3>Serological assays measure circulating antibodies that bind to or neutralize a specific antigen</h3>
+				</section>
+
+				<section>
+					<h3>Antibody response curve</h3>
+					<img class="stretch" src="images/antibody_response_curve_1.jpg">
+				</section>
+
+				<section>
+					<h3>Antibody response curve</h3>
+					<img class="stretch" src="images/antibody_response_curve_2.png">
+					<div class="citation">
+						<a href="https://github.com/blab/antibody-response-pulse">
+							Li 2016
+						</a>
+					</div>
+				</section>
+
+				<section>
+					<h3>Antibodies bind to virus</h3>
+					<img class="stretch" src="images/antibody_contact.jpg">
+					<div class="citation">
+						<a href="http://www.pnas.org/content/109/42/17040">
+							Lee et al 2012
+						</a>
+					</div>
+				</section>
+
+				<section>
+					<h3>Influenza hemagglutination inhibition (HI) assay</h3>
+					<img class="stretch" src="images/hi_assay.png">
+				</section>
+
+				<section>
+					<h3>HI titer correlates strongly with protection</h3>
+					<img class="stretch" src="images/hi_vs_protection.png">
+					<div class="citation">
+						<a href="http://dx.doi.org/10.1017/S0022172400022610">
+							Hobson et al 1972
+						</a>
+					</div>
+				</section>
+
+				<section>
+					<h3>HI assay can measure cross-reactivity</h3>
+					<img class="stretch" src="images/hi_cross_reactive.png">
+				</section>
+
+				<section>
+					<h3>Data presented as pairwise maximum inhibitory titers</h3>
+					<img class="stretch" src="images/hi_table.png">
+					<div class="citation">
+						<a href="http://www.crick.ac.uk/research/worldwide-influenza-centre/annual-and-interim-reports/">
+							NIMR WHO interim report Sep 2010
+						</a>
+					</div>
+				</section>
+
+				<section>
+					<h3>Data from many HI assays are hard to summarize</h3>
+					<img class="stretch" src="images/cartography_1.png">
+				</section>
+
+				<section>
+					<h3>Antigenic cartography</h3>
+					<br>
+					Uses <a href="https://en.wikipedia.org/wiki/Multidimensional_scaling">multidimensional
+					scaling (MDS)</a> to position viruses in 2D space such that the distances in this space
+					best fit the HI titers.
+					<img class="stretch" src="images/cartography_2.png">
+				</section>
+
+				<section>
+					<h3><i>Cartography exercise: example</i></h3>
+					<br>
+					<p>
+					Pairwise titers:
+					</p>
+					<table>
+						<tr>
+							<td></td>
+							<td><b>Serum A</b></td>
+							<td><b>Serum B</b></td>
+						</tr>
+
+						<tr>
+							<td><b>Virus A</b></td>
+							<td>2560</td>
+							<td>80</td>
+						</tr>
+						<tr>
+							<td><b>Virus B</b></td>
+							<td>160</td>
+							<td>1280</td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<h3><i>Cartography exercise: example</i></h3>
+					<br>
+					<p>
+					Convert to distances, based on 2-fold drops in titer from highest titer in a column.
+					</p>
+					<table>
+						<tr>
+							<td></td>
+							<td><b>Serum A</b></td>
+							<td><b>Serum B</b></td>
+						</tr>
+
+						<tr>
+							<td><b>Virus A</b></td>
+							<td>0</td>
+							<td>4</td>
+						</tr>
+						<tr>
+							<td><b>Virus B</b></td>
+							<td>4</td>
+							<td>0</td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<h3><i>Cartography exercise: example</i></h3>
+					<br>
+					<p>
+					Position elements in 2D space so that distances are recapitulated.
+					</p>
+					<img class="stretch" src="images/cartography_example.png">
+				</section>
+
+				<section>
+					<h3><i>Cartography exercise: data</i></h3>
+					<br>
+					<table>
+						<tr>
+							<td></td>
+							<td><b>Serum A</b></td>
+							<td><b>Serum B</b></td>
+							<td><b>Serum C</b></td>
+							<td><b>Serum D</b></td>
+						</tr>
+
+						<tr>
+							<td><b>Virus A</b></td>
+							<td>2560</td>
+							<td>80</td>
+							<td>640</td>
+							<td>640</td>
+						</tr>
+						<tr>
+							<td><b>Virus B</b></td>
+							<td>160</td>
+							<td>1280</td>
+							<td>640</td>
+							<td>640</td>
+						</tr>
+						<tr>
+							<td><b>Virus C</b></td>
+							<td>320</td>
+							<td>160</td>
+							<td>5120</td>
+							<td>640</td>
+						</tr>
+						<tr>
+							<td><b>Virus D</b></td>
+							<td>640</td>
+							<td>320</td>
+							<td>1280</td>
+							<td>2560</td>
+						</tr>
+					</table>
+					<br>
+					<p>
+						Hints: Titers won't match perfectly, but will match well. All points can
+						fit in previous slide's grid.
+					</p>
+				</section>
+
+				<section>
+					<h3>Antigenic cartography for H3N2 influenza</h3>
+					<img class="stretch" src="images/cartography_3.png">
+					<div class="citation">
+						<a href="http://www.sciencemag.org/content/305/5682/371.short">
+							Smith et al 2004
+						</a>
+					</div>
+				</section>
+
+				<section>
+					<h3>More detailed analysis of H3N2 viruses from 2000 to 2007</h3>
+					<img class="stretch" src="images/russell_map.png">
+					<div class="citation">
+						<a href="http://www.sciencemag.org/content/320/5874/340.short">
+							Russell et al 2008
+						</a>
+					</div>
+				</section>
+
+				<section>
+					<h3>Primitive lineages die out, while advanced lineages persist</h3>
+					<img class="stretch" src="images/russell_tree.png">
+				</section>
+
+				<section>
+					<h3>Antigenic evolution leads to clade turnover</h3>
+					<img class="stretch" src="images/flu_h3n2_tree.png">
+				</section>
+
+				<section>
+					<h3>The WHO has to keep updating vaccine strain to keep up with ongoing evolution</h3>
+					<img class="stretch" src="images/flu_vaccine_updates.png">
+				</section>
+
+				<section>
+					<h3>Vaccine strains map to drift events</h3>
+					<img class="stretch" src="images/flu_h3n2_tree_vaccines.png">
+				</section>
+
+				<section>
+					<h3>Four circulating serotypes of dengue virus with distinct phenotypes</h3>
+					<img class="stretch" src="images/dengue_phylogeny_map.png">
+					<div class="citation">
+							Katzelnick et al 2015
+					</div>
+				</section>
+
+				<section>
+					<h2>Original antigenic sin</h2>
+				</section>
+
+				<section data-background="images/garden.jpg">
+				</section>
+
+				<section>
+					<p>
+						"Humans vaccinated against influenza produce antibodies against the immunizing antigen, but
+						produce antibodies of higher titer against the antigen that was their first childhood experience
+						of influenza, even if that strain happend to be absent from the vaccine."
+					</p>
+					<div class="citation">
+						<a href="http://jem.rupress.org/content/124/3/331.abstract">
+							Fazekas de St. Groth and Webster 1966
+						</a>
+					</div>
+				</section>
+
+				<section>
+					<h3>Plotting human HI titers through time</h3>
+					<img class="stretch" src="images/landscapes_1.png">
+					<div class="citation">
+						<a href="http://www.sciencemag.org/content/346/6212/996.abstract">
+							Fonville et al 2014
+						</a>
+					</div>
+				</section>
+
+				<section>
+					<h3>Infection transiently raises titers</h3>
+					<img class="stretch" src="images/landscapes_2.png">
+					<div class="citation">
+						<a href="http://www.sciencemag.org/content/346/6212/996.abstract">
+							Fonville et al 2014
+						</a>
+					</div>
+				</section>
+
+				<section>
+					<h3>Vaccination shows a similar effect</h3>
+					<img class="stretch" src="images/landscapes_3.png">
+					<div class="citation">
+						<a href="http://www.sciencemag.org/content/346/6212/996.abstract">
+							Fonville et al 2014
+						</a>
+					</div>
+				</section>
+
+				<section>
+					<h3>Titers increase more to older viruses, not to antigenically matched viruses</h3>
+					<img class="stretch" src="images/landscapes_4.png">
+					<div class="citation">
+						<a href="http://www.sciencemag.org/content/346/6212/996.abstract">
+							Fonville et al 2014
+						</a>
+					</div>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="../reveal/lib/js/head.min.js"></script>
+		<script src="../reveal/js/reveal.min.js"></script>
+		<script src="../reveal/js/config.js"></script>
+
+	</body>
+</html>
