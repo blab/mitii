@@ -1,5 +1,5 @@
 ---
-title: "MITII Day 4"
+title: "Phylogenetic analysis and comparison to models"
 author: "Erick Matsen and Trevor Bedford"
 date: "April 24, 2017"
 output: html_document
@@ -80,3 +80,11 @@ For a more quantitative comparison:
 ```{r}
 sum(true_colless > sim_colless) / n_sims
 ```
+
+
+## Exercise: repeat tree shape analysis with flu tree
+
+1. Load flu tree (`processed/flu.nwk`) into R
+2. Pick an appropriate sequence with which to root the tree
+3. Make a tree shape object and calculate the Colless statistic
+4. How does it compare to the simulated trees?

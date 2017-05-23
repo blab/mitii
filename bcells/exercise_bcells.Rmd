@@ -17,7 +17,7 @@ library(bcRep)
 
 We assume that you have run your data through [IMGT HighV-QUEST](http://imgt.org/HighV-QUEST/login.action).
 
-I've done that for you for samples from the Rubelt et al twins study and put them in a `.zip` archive in the `bcells/data` directory.
+I've done that for you for samples from the [Rubelt et al](https://www.nature.com/articles/ncomms11112) twins study and put them in a `.zip` archive in the `bcells/data` directory.
 Please unzip them in place.
 
 The samples are organized into twin pairs, with 1A/1B being one twin pair, and 2A/2B being another.
