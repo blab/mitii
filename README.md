@@ -28,7 +28,7 @@ An introduction to immunity from an evolutionary perspective. We will introduce 
 * Somatic hypermutation and mismatch repair
 * A bit of antibody structure
 
-### [Selection](selection/) and the [coalescent](coalescent/)
+### [The coalescent and selection](coalescent-and-selection/)
 
 * Introduction to Kingman's coalescent
 * Effective population size and demographic inference
@@ -42,7 +42,7 @@ An introduction to immunity from an evolutionary perspective. We will introduce 
 
 * Sequence alignment
 * Types of phylogenetic inference methods
-* *Exercise: Parsinomy reconstruction*
+* *Exercise: Parsimony reconstruction*
 * Intro to likelihood
 * *Exercise: Likelihood surface*
 * Likelihood-based phylogenetics
