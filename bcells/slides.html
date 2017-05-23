@@ -103,7 +103,6 @@
 				</section>
 
 <section data-transition="none">
-<h1></h1>
 <video autoplay loop>
 <source src="images/victora-movieS3.webm" type="video/webm">
 </video>
@@ -114,35 +113,27 @@
 </div>
 </section>
 <section data-transition="none">
-<h1></h1>
 <p><img src="images/gc-victora-mesin-1_nofonts.svg" height="620"></p>
 </section>
 <section data-transition="none">
-<h1></h1>
 <p><img src="images/gc-victora-mesin-2_nofonts.svg" height="620"></p>
 </section>
 <section data-transition="none">
-<h1></h1>
 <p><img src="images/gc-victora-mesin-3_nofonts.svg" height="620"></p>
 </section>
 <section data-transition="none">
-<h1></h1>
 <p><img src="images/gc-victora-mesin-4_nofonts.svg" height="620"></p>
 </section>
 <section data-transition="none">
-<h1></h1>
 <p><img src="images/gc-victora-mesin-5_nofonts.svg" height="620"></p>
 </section>
 <section data-transition="none">
-<h1></h1>
 <p><img src="images/gc-victora-mesin-6_nofonts.svg" height="620"></p>
 </section>
 <section data-transition="none">
-<h1></h1>
 <p><img src="images/gc-victora-mesin-7_nofonts.svg" height="620"></p>
 </section>
 <section data-transition="none">
-<h1></h1>
 <p><img src="images/gc-victora-mesin_nofonts.svg" height="620"></p>
 </section>
 <section data-transition="none">
@@ -324,134 +315,207 @@
 								Avnir et al. 2016
 							</a>
 						</div>
-						</section>
-
-				<section>
-					<p>A story about a sample of people born between 1965 and 1979...
-				</section>
-
-				<section>
-					<h3>In 2013, H1N1 acquired K166Q</h3>
-					<img class="stretch" src="images/linderman_flu.png">
-						<div class="citation">
-							<a href="http://www.pnas.org/content/111/44/15798.abstractl">
-								Linderman et al. 2014
-							</a>
-						</div>
-						</section>
-
-				<section>
-					<h3>Uneven recognition</h3>
-					<img class="stretch" src="images/linderman_cohort.png">
-						<div class="citation">
-							<a href="http://www.pnas.org/content/111/44/15798.abstractl">
-								Linderman et al. 2014
-							</a>
-					</div>
-				</section>
-
-				<section>
-					<h3>Homology with childhood strain</h3>
-					<img class="stretch" src="images/linderman_homology.png">
-						<div class="citation">
-							<a href="http://www.pnas.org/content/111/44/15798.abstractl">
-								Linderman et al. 2014
-							</a>
-						</div>
-				</section>
-
-				<section>
-					<h3>Recapitulation in ferrets</h3>
-					<img src="images/linderman_ferret.png">
-						<div class="citation">
-							<a href="http://www.pnas.org/content/111/44/15798.abstractl">
-								Linderman et al. 2014
-							</a>
-					</div>
-				</section>
-
-				<section>
-					<h3>Strain phenotypes depend on host</h3>
-					<img src="images/two_loci.png">
-						<div class="citation">
-							<a href="http://onlinelibrary.wiley.com/doi/10.1111/nyas.12493/abstract">
-								Cobey 2014
-							</a>
-						</div>
-				</section>
-
-				<section>
-					<h3>Broad cohort-specific effects</h3>
-					<img src="images/gmt_cohort.png" style="width: 70%; height: 70%;">
-						<div class="citation">
-							<a href="http://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1002802">
-								Lessler et al. 2012
-							</a>
-						</div>
-						</section>
-
-				<section>
-					<h3>"Antigenic seniority"</h3>
-					<img src="images/relative_gmt.png" style="width: 70%; height: 70%;">
-						<div class="citation">
-							<a href="http://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1002802">
-								Lessler et al. 2012
-							</a>
-						</div>
-				</section>
+                </section>
 
 
-				<section data-background="#99CCFF">
-					<h3>What's so special about early infections?</h3>
-				</section>
+<section id="section" class="slide level1">
+<h1> How can we learn using probabilistic models? </h1>
+</section>
+<section id="we-dont-need-lots-of-little-techniques" class="slide level1">
+We don’t need lots of little techniques…
+<p><img src="images/chicobonbon.jpg" height="500"></p>
+<p>we only need models and one principle: <em>likelihood</em>.</p>
+</section>
+<section id="we-can-sequence-bcrs-in-high-throughput" class="slide level1">
+<h3>We can sequence BCRs in high throughput</h3>
+<p><img src="images/bcell-mess-1_nofonts.svg" height="620"></p>
+</section>
+<section id="how-do-we-learn-from-bcr-sequences" class="slide level1">
+<h3>How do we learn from BCR sequences?</h3>
+<p><img src="images/bcell-mess-2_nofonts.svg" height="620"></p>
+</section>
+<section id="section-1" class="slide level1">
+<ol style="font-size:1.4em">
+<li>
+Develop probabilistic model of biological process and how data is generated.
+</li>
+<li class="fragment">
+Find parameter choices that <em>maximize the likelihood</em> of generating the observed data.
+</li>
+</ol>
+<p><br></p>
+<p><br></p>
+<div class="fragment">
+<p>When a field of bioinformatics is mature, it becomes statistics.<br> <em>E.g.</em> Maximum-likelihood phylogenetics, HMMER, DESeq2, etc.</p>
+</div>
+</section>
+<section id="vdj-rearrangement" class="slide level1">
+<h3>VDJ rearrangement</h3>
+<p><br></p>
+<p><img width="970" src="images/overview-top_nofonts.svg"></p>
+</section>
+<section id="section-2" class="slide level1">
+<p><img src="images/overview-hmm-1_nofonts.svg" height="620"></p>
+</section>
+<section id="hmm-intro-dishonest-casino" class="slide level1">
+<h3>HMM intro: dishonest casino</h3>
+<p><img src="images/dishonest-casino-1_nofonts.svg" height="620"></p>
+</section>
+<section id="hmm-intro-dishonest-casino-1" class="slide level1">
+<h3>HMM intro: dishonest casino</h3>
+<p><img src="images/dishonest-casino-2_nofonts.svg" height="620"></p>
+</section>
+<section id="hmm-intro-dishonest-casino-2" class="slide level1">
+<h3>HMM intro: dishonest casino</h3>
+<p><img src="images/dishonest-casino-3_nofonts.svg" height="620"></p>
+</section>
+<section id="hmm-intro-dishonest-casino-3" class="slide level1">
+<h3>HMM intro: dishonest casino</h3>
+<p><img src="images/dishonest-casino_nofonts.svg" height="620"></p>
+</section>
+<section id="section-3" class="slide level1">
+<h3></h3>
+<p><img src="images/dishonest-casino-expanded-1_nofonts.svg" height="620"></p>
+</section>
+<section id="section-4" class="slide level1">
+<h3></h3>
+<p><img src="images/dishonest-casino-expanded_nofonts.svg" height="620"></p>
+</section>
+<section id="section-5" class="slide level1">
+<h3></h3>
+<p><img src="images/dishonest-casino-expanded_nofonts.svg" height="450"></p>
+<ol type="1">
+<li>What is the likelihood of the data under this path (write equation)</li>
+<li>If <span class="math inline">\(p\)</span> is close to 0.5, what is an alternate path that will have a higher likelihood? What is this likelihood?</li>
+</ol>
+</section>
+<section id="section-6" class="slide level1">
+<h3></h3>
+<p><img src="images/overview-hmm-2_nofonts.svg" height="620"></p>
+</section>
+<section id="section-7" class="slide level1">
+<h3></h3>
+<p><img src="images/overview-hmm_nofonts.svg" height="620"></p>
+</section>
+<section id="section-8" class="slide level1">
+<p><img src="images/overview-hmm_nofonts.svg" height="500"></p>
+<p>Biased die roll <span class="math inline">\(\leftrightarrow\)</span> read base (under mutation)<br> Switching dice <span class="math inline">\(\leftrightarrow\)</span> changing between V, D, J genes</p>
+</section>
+<section id="section-9" class="slide level1">
+<p><img width="970" src="images/vdj_recomb_inference_nofonts.svg"></p>
+<div class="fragment">
+<p><img src="images/overview-hmm-1_nofonts.svg" style="float:right" height="300"></p>
+<p> </p>
+<p><em>VDJ annotation problem:</em> from where did each nucleotide come?</p>
+<p>A: Take maximum-likelihood HMM path.</p>
+</div>
+</section>
+<section id="what-are-probabilities" class="slide level1">
+<h3>What are probabilities?</h3>
+<p><img src="images/overview-hmm_nofonts.svg" height="620"></p>
+</section>
+<section id="distributions-are-reproducibly-weird" class="slide level1">
+<h3>Distributions are reproducibly weird!</h3>
+<p><img src="images/IGHV2-70_star_12-v_3p_del_nofonts.svg" height="620"></p>
+</section>
+<section id="distributions-are-reproducibly-weird-1" class="slide level1">
+<h3>Distributions are reproducibly weird!</h3>
+<p><a href="images/IGHV2-70_star_12-v_3p_del_nofonts.svg" target="_blank"><img width="380" src="images/IGHV2-70_star_12-v_3p_del_nofonts_nofonts.svg"></a> <a href="images/IGHD1-14_star_01-d_5p_del_nofonts.svg" target="_blank"><img width="380" src="images/IGHD1-14_star_01-d_5p_del_nofonts_nofonts.svg"></a> <a href="images/IGHD7-27_star_01-d_3p_del_nofonts.svg" target="_blank"><img width="380" src="images/IGHD7-27_star_01-d_3p_del_nofonts_nofonts.svg"></a> <a href="images/IGHJ4_star_02-j_5p_del_nofonts.svg" target="_blank"><img width="380" src="images/IGHJ4_star_02-j_5p_del_nofonts_nofonts.svg"></a></p>
+<aside class="notes">
+<ul>
+<li>IGHV2-70 12 . number of reads.</li>
+<li>Adaptive: 4794 5987 2181</li>
+<li>Stanford: 171 110 553 97 126 210 500 597 151 131 358 81 139 99 105</li>
+</ul>
+</aside>
+</section>
+<section id="distributions-are-reproducibly-weird-2" class="slide level1">
+<h3>Distributions are reproducibly weird!</h3>
+<p><a href="images/IGHV3-23D_star_01_nofonts.svg" target="_blank"><img width="600" src="images/IGHV3-23D_star_01_nofonts_nofonts.svg"></a> <a href="images/IGHV3-33_star_06_nofonts.svg" target="_blank"><img width="600" src="images/IGHV3-33_star_06_nofonts_nofonts.svg"></a></p>
+</section>
+<section id="find-clonal-families" class="slide level1">
+<h3>Find clonal families</h3>
+<p><img src="images/clustering_goal_nofonts.svg" height="620"></p>
+</section>
+<section id="find-clonal-families-1" class="slide level1">
+<h3>Find clonal families</h3>
+<p><img src="images/clustering_goal_nofonts.svg" height="500"></p>
+<p><em>Did two sequences come from the same VDJ recombination?</em></p>
+</section>
+<section id="say-we-are-given-two-sequences" class="slide level1">
+<h3>Say we are given <em>two</em> sequences</h3>
+<p><img src="images/dishonest-casino-pair_nofonts.svg" height="620"></p>
+</section>
+<section id="double-roll-leftrightarrow-pair-hmm" class="slide level1">
+<h3>Double roll <span class="math inline">\(\leftrightarrow\)</span> Pair HMM</h3>
+<p><img src="images/dishonest-casino-expanded-pair_nofonts.svg" height="550"></p>
+</section>
+<section id="double-roll-leftrightarrow-pair-hmm-1" class="slide level1">
+<h3>Double roll <span class="math inline">\(\leftrightarrow\)</span> Pair HMM</h3>
+<p><img src="images/dishonest-casino-expanded-pair_nofonts.svg" style="float:left" height="550"></p>
+<p><br></p>
+<p><br></p>
+<p>Pick double roll hypothesis if it has higher likelihood of generating data.</p>
+<p><br></p>
+<div class="fragment">
+<p>What about BCRs?</p>
+</div>
+</section>
+<section id="section-10" class="slide level1">
+<h3></h3>
+<p><img width="970" src="images/separate-or-together_nofonts.svg"></p>
+<p><br></p>
+<div class="fragment">
+(But we only know the sequences, not the annotations!)
+</div>
+</section>
+<section id="section-11" class="slide level1">
+<p><img src="images/overview-hmm-1_nofonts.svg" height="620"></p>
+</section>
+<section id="do-two-sequences-come-from-a-single-rearrangement-event" class="slide level1">
+<h3>Do two sequences come from a single rearrangement event?</h3>
+<p>Probability of generating observed sequence <span class="math inline">\(x\)</span> from HMM:</p>
+<p><span class="math display">\[
+\mathbb P(x) = \sum_{\text{paths}\ \sigma} \mathbb P(x;\sigma),
+\]</span></p>
+<div class="fragment">
+<p>Probability of generating two sequences <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> from the same path through the HMM (i.e. from the same rearrangement event):</p>
+<p><span class="math display">\[
+\mathbb P(x,y) = \sum_{\text{paths}\ \sigma} \mathbb P(x,y;\sigma),
+\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[
+\text{Calculate: } \frac{\mathbb P(x, y)}{\mathbb P(x) \mathbb P(y)} = \frac{\mathbb P(\text{single rearrangement})}{\mathbb P(\text{independent rearrangements})}
+\]</span></p>
+</div>
+</section>
+<section id="do-sets-of-sequences-come-from-a-single-rearrangement-event" class="slide level1">
+<h3>Do sets of sequences come from a <br> single rearrangement event?</h3>
+<p> </p>
+<p><span class="math display">\[
+\frac{\mathbb P(A \cup B)}{\mathbb P(A) \mathbb P(B)} = \frac{\mathbb P(A \cup B \ | \ \text{single rearrangement})}{\mathbb P(A,B  \ | \ \text{independent rearrangements})}
+\]</span></p>
+<p> </p>
+<p>Use this for agglomerative clustering; stop when the ratio &lt; 1.</p>
+<p><img width="970" src="images/agglomerative-clustering_nofonts.svg"></p>
+</section>
 
-				<section>
-					<h3>Response to 2009 H1N1 vaccine</h3>
-					<img src="images/andrews_groups.png" style="width: 30%; height: 30%;">
-						<div class="citation">
-							<a href="http://stm.sciencemag.org/content/7/316/316ra192">
-								Andrews et al. 2015
-							</a>
-						</div>
-						</section>
+<section>
+<ul>
+<li> Munshaw, S., & Kepler, T. B. (2010). <em>SoDA2: a Hidden Markov Model approach for identification of immunoglobulin rearrangements. </em> Bioinformatics. </li>
+<li>Murugan, Mora, Walczak, & Callan (2012). <em>Statistical inference of the generation probability of T-cell receptors from sequence repertoires.</em> PNAS. </li>
+<li>Ralph &amp; M. (2016). <em>Consistency of VDJ Rearrangement and Substitution Parameters Enables Accurate B Cell Receptor Sequence Annotation.</em> PLOS Computational Biology.</li>
+<li>Ralph &amp; M. (2016). <em>Likelihood-based inference of B-cell clonal families.</em>PLOS Computational Biology.</li>
+<li>
+Elhanati, Sethna, Marcou, Callan, Mora, \& Walczak (2015). <em> Inferring processes underlying B-cell repertoire diversity. </em> Philosophical Transactions of the Royal Society of London.
+</li>
+<li>
+Elhanati, Marcou, Mora, & Walczak (2016). <em> repgenHMM: a dynamic programming tool to infer the rules of immune receptor generation from sequence data.<em> Bioinformatics.
+</li>
+</ul>
+</section>
 
-				<section>
-					<h3>Stalk responses can fade</h3>
-					<img src="images/andrews_revaccinated.png" style="width: 30%; height: 30%;">
-						<div class="citation">
-							<a href="http://stm.sciencemag.org/content/7/316/316ra192">
-								Andrews et al. 2015
-							</a>
-						</div>
-				</section>
-
-				<section>
-					<h3>Stalk antibodies bind with lower affinity</h3>
-					<img src="images/andrews_stalk_kd.png" style="width: 50%; height: 50%;">
-						<div class="citation">
-							<a href="http://stm.sciencemag.org/content/7/316/316ra192">
-								Andrews et al. 2015
-							</a>
-						</div>
-						</section>
-
-				<section>
-					<h3>Stalk antibodies are more polyreactive</h3>
-					<img src="images/stalk_polyreactive.png" style="width: 90%; height: 90%;">
-						<div class="citation">
-							<a href="http://stm.sciencemag.org/content/7/316/316ra192">
-								Andrews et al. 2015
-							</a>
-						</div>
-						</section>
-
-				<section data-background="#99CCFF">
-					<h3>Potential factors influencing specific antibody responses</h3>
-					<p>Host genotype
-					<p>Order (Age?) of infection
-					<p>Immunogenicity
-					<p>Autoreactivity
-				</section>
 
 			</div>
 
