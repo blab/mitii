@@ -1,5 +1,5 @@
 ---
-title: "exercise_bcells.Rmd"
+title: "B cell analysis with IMGT and bcRep"
 author: "Erick Matsen"
 date: "May 2, 2017"
 output: html_document
@@ -35,7 +35,7 @@ Luckily there is an R package for that, called [bcRep](https://cran.r-project.or
 
 First we get our data using the `readIMGT` function:
 
-```{r}
+```{r, results="hide"}
 aa_1a = readIMGT("~/rubelt/rubelt_naive_1A/5_AA-sequences.txt")
 aa_1b = readIMGT("~/rubelt/rubelt_naive_1B/5_AA-sequences.txt")
 aa_2a = readIMGT("~/rubelt/rubelt_naive_2A/5_AA-sequences.txt")
@@ -61,6 +61,18 @@ v_genes = lapply(data, function(x) x$V_GENE_and_allele)
 Now we can make the comparison:
 ```{r}
 v_gene_comp = compare.geneUsage(gene.list = v_genes, level = "subgroup", names = names)
-plotCompareGeneUsage(v_gene_comp)
+v_gene_comp
 ```
 What do you think?
+
+## Exercises
+
+All exercises use the [bcRep documentation](https://cran.r-project.org/web/packages/bcRep/).
+
+1. What is `compare.geneUsage` actually reporting?
+2. Find and apply a plotting function to plot the results in `v_gene_comp`.
+3. Perform another comparison using this data set.
+
+## Next steps
+
+If you want to learn more about R, here are some [good resources](https://www.rstudio.com/online-learning/#R) to get you started.
