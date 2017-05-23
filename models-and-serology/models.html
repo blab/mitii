@@ -54,27 +54,56 @@
 				-->
 
 				<section>
-					<h3>Standard SIR model</h3>
+					<h3>Simple SIR model</h3>
 					<br>
-					<img class="stretch" src="images/sir_compartments.png">
+					<img class="stretch" src="images/sir_simple_compartments.png">
+					<p>$dS/dt = \beta S I$</p>
+					<p>$dI/dt = \beta S I - \gamma I$</p>
+					<p>$dR/dt = \gamma I$</p>
+				</section>
+
+				<section>
+					<h3>Simple SIR behavior</h3>
+					<img class="stretch" src="images/sir_simple_behavior.png">
+				</section>
+
+				<section>
+					<h3>SIR model with vital dynamics</h3>
+					<br>
+					<img class="stretch" src="images/sir_vital_compartments.png">
 					<p>$dS/dt = \mu - \beta S I - \mu S$</p>
 					<p>$dI/dt = \beta S I - \gamma I - \mu I$</p>
 					<p>$dR/dt = \gamma I - \mu R$</p>
 				</section>
 
 				<section>
-					<h3>Model behavior</h3>
-					<!-- Figure here! -->
-					<img class="stretch" src="images/sir_behavior.png">
+					<h3>Fundamental reproductive number</h3>
+					<br>
+					<p>Growth when 100% of population is susceptible</p>
+					<p>$$dI/dt = \beta S I - \gamma I - \mu I = \beta I - \gamma I - \mu I = (\beta - \gamma - \mu) I$$</p>
+					<p>$$R_0 = \frac{\beta}{\gamma + \mu}$$</p>
+				</section>
+
+				<section>
+					<h3>SIR with vital dynamics behavior</h3>
+					<img class="stretch" src="images/sir_vital_behavior.png">
 				</section>
 
 				<section>
 					<h3>Solving for endemic equilibrium</h3>
-					<!-- Equations here! -->
+					<br>
+					<p>Equilibrium when $S$, $I$ and $R$ remain constant through time</p>
+					<p>$$dI/dt = 0 = \beta S^* I^* - \gamma I^* - \mu I^*$$</p>
+					<p>$$\beta S^* I^* = \gamma I^* + \mu I^*$$</p>
+					<p>$$\beta S^* = \gamma + \mu$$</p>
+					<p>$$S^* = \frac{\gamma + \mu}{\beta} = \frac{1}{R_0}$$</p>
+					<p>With this equation, we can solve for equilibrium infecteds</p>
+					<p>$$I^* = \frac{\mu}{\beta} (R_0 - 1)$$</p>
 				</section>
 
 				<section>
 					<h3>Two-strain SIR model, independence between strains</h3>
+					<p class="smaller">All the following have host birth/death arrows omitted for clarity</p>
 					<img class="stretch" src="images/two_strain_sir_indp_compartments.png">
 				</section>
 
@@ -99,6 +128,54 @@
 				<section>
 					<h3>Two-strain SIR model, cross-immunity through polarizing immunity</h3>
 					<img class="stretch" src="images/two_strain_sir_polarizing_compartments.png">
+				</section>
+
+				<section>
+					<h3><i>Exercise: invasion of second strain into an endemic population</i></h3>
+					<p>Assuming the model of polarizing immunity, allow a single strain to reach endemic
+						equilibrium</p>
+					<p>$$S^*_1 = \frac{1}{R_0}$$, $$I^*_1 = \frac{\mu}{\beta} (R_0 - 1)$$</p>
+					<p>After strain 1 equilibrium is reached, allow strain 2 to enter the population.
+						Strains share $R_0, \beta, \gamma$ parameters.</p>
+					<p><b>Questions</b>:
+						What is the endemic equilibrium $S^*_2$ for strain 2?
+						Given $S^*_2$, what is the initial growth rate of strain 2?
+						What effect does $\sigma$ have on this growth rate?
+					  When can strain 2 invade?</p>
+				</section>
+
+				<section>
+					<h3>Dynamical outcomes of invasion</h3>
+					<img class="stretch" src="images/two_strain_sir_invasion.png">
+					<div class="citation">
+						Restif and Grenfell 2007
+					</div>
+				</section>
+
+				<section>
+					<h3>Dynamical outcomes of invasion</h3>
+					<img class="stretch" src="images/two_strain_sir_outcomes.png">
+					<div class="citation">
+						Restif and Grenfell 2007
+					</div>
+				</section>
+
+				<section>
+					<h3>Under some regimes, may result in continual strain turnover</h3>
+					<img class="stretch" src="images/linear_strain_space.png">
+					<div class="citation">
+						Gog and Grenfell 2002
+					</div>
+				</section>
+
+				<section>
+					<h3>Again, looks similar to strain replacement in influenza</h3>
+					<img class="stretch" src="images/flu_drift_phylogeny.png">
+					<div class="citation">
+						<a href="http://www.sciencemag.org/content/305/5682/371.short">
+							Smith et al 2004
+						</a>
+					</div>
 				</section>
 
 				<!-- Colors
