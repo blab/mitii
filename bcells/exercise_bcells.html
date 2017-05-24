@@ -123,11 +123,14 @@ $(document).ready(function () {
 </div>
 
 
+<div id="r-setup" class="section level2">
+<h2>R setup</h2>
 <pre class="r"><code>library(bcRep)</code></pre>
+</div>
 <div id="getting-data-from-imgt" class="section level2">
 <h2>Getting data from IMGT</h2>
 <p>We assume that you have run your data through <a href="http://imgt.org/HighV-QUEST/login.action">IMGT HighV-QUEST</a>.</p>
-<p>I’ve done that for you for samples from the <a href="https://www.nature.com/articles/ncomms11112">Rubelt et al</a> twins study and put them in a <code>.zip</code> archive in the <code>bcells/data</code> directory. Please unzip them in place.</p>
+<p>I’ve done that for you for samples from the <a href="https://www.nature.com/articles/ncomms11112">Rubelt et al</a> twins study and put them in a <code>.zip</code> archive in the <code>bcells/data</code> directory. If you don’t have the whole repository get them <a href="https://github.com/blab/mitii/blob/master/bcells/data/rubelt.zip">directly</a>. Please unzip them in place.</p>
 <p>The samples are organized into twin pairs, with 1A/1B being one twin pair, and 2A/2B being another. All of them are from naive sorts. Our challenge will be to see if pairs of twins have more similar gene usage than non-twin pairs.</p>
 <p>Take a look at the files and get acquainted with their contents. They’re complicated!</p>
 </div>
@@ -135,10 +138,10 @@ $(document).ready(function () {
 <h2>Using bcRep</h2>
 <p>Parsing these files on our own would be a pain. Luckily there is an R package for that, called <a href="https://cran.r-project.org/web/packages/bcRep">bcRep</a>.</p>
 <p>First we get our data using the <code>readIMGT</code> function:</p>
-<pre class="r"><code>aa_1a = readIMGT(&quot;~/rubelt/rubelt_naive_1A/5_AA-sequences.txt&quot;)
-aa_1b = readIMGT(&quot;~/rubelt/rubelt_naive_1B/5_AA-sequences.txt&quot;)
-aa_2a = readIMGT(&quot;~/rubelt/rubelt_naive_2A/5_AA-sequences.txt&quot;)
-aa_2b = readIMGT(&quot;~/rubelt/rubelt_naive_2B/5_AA-sequences.txt&quot;)</code></pre>
+<pre class="r"><code>aa_1a = readIMGT(&quot;data/rubelt_naive_1A/5_AA-sequences.txt&quot;)
+aa_1b = readIMGT(&quot;data/rubelt_naive_1B/5_AA-sequences.txt&quot;)
+aa_2a = readIMGT(&quot;data/rubelt_naive_2A/5_AA-sequences.txt&quot;)
+aa_2b = readIMGT(&quot;data/rubelt_naive_2B/5_AA-sequences.txt&quot;)</code></pre>
 <p>Here we can see that the <code>readIMGT</code> function has done a nice job of parsing the file.</p>
 <pre class="r"><code>head(aa_1a, n=7)</code></pre>
 <pre><code>##   Sequence_number                                        Sequence_ID
