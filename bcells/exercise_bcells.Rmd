@@ -9,6 +9,8 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+## R setup
+
 ```{r}
 library(bcRep)
 ```
@@ -18,6 +20,7 @@ library(bcRep)
 We assume that you have run your data through [IMGT HighV-QUEST](http://imgt.org/HighV-QUEST/login.action).
 
 I've done that for you for samples from the [Rubelt et al](https://www.nature.com/articles/ncomms11112) twins study and put them in a `.zip` archive in the `bcells/data` directory.
+If you don't have the whole repository get them [directly](https://github.com/blab/mitii/blob/master/bcells/data/rubelt.zip).
 Please unzip them in place.
 
 The samples are organized into twin pairs, with 1A/1B being one twin pair, and 2A/2B being another.
@@ -36,17 +39,17 @@ Luckily there is an R package for that, called [bcRep](https://cran.r-project.or
 First we get our data using the `readIMGT` function:
 
 ```{r, results="hide"}
-aa_1a = readIMGT("~/rubelt/rubelt_naive_1A/5_AA-sequences.txt")
-aa_1b = readIMGT("~/rubelt/rubelt_naive_1B/5_AA-sequences.txt")
-aa_2a = readIMGT("~/rubelt/rubelt_naive_2A/5_AA-sequences.txt")
-aa_2b = readIMGT("~/rubelt/rubelt_naive_2B/5_AA-sequences.txt")
+aa_1a = readIMGT("data/rubelt_naive_1A/5_AA-sequences.txt")
+aa_1b = readIMGT("data/rubelt_naive_1B/5_AA-sequences.txt")
+aa_2a = readIMGT("data/rubelt_naive_2A/5_AA-sequences.txt")
+aa_2b = readIMGT("data/rubelt_naive_2B/5_AA-sequences.txt")
 ```
 
 Here we can see that the `readIMGT` function has done a nice job of parsing the file.
 ```{r}
 head(aa_1a, n=7)
 ```
-But see that last part, with the `, or`? 
+But see that last part, with the `, or`?
 The IMGT output isn't really meant to be parsed by a computer easily, it's meant to be read by humans.
 Luckily we can use some tools from bcRep to handle this.
 

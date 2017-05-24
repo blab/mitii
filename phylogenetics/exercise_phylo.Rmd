@@ -19,7 +19,7 @@ install.packages("apTreeshape")
 ## Doing sequence alignment
 
 First we need to download the raw sequence data.
-Visit the [data page for this exercise](https://github.com/blab/mitii/tree/master/phylogenetics/data) and download the data sets.
+If you haven't gotten a zip file for the whole repository, visit the [data page for this exercise](https://github.com/blab/mitii/tree/master/phylogenetics/data) and download the data sets.
 If you are having trouble with that, simply click [here](https://raw.githubusercontent.com/blab/mitii/master/phylogenetics/data/HIV1_REF_2010_gag_DNA.fasta) and save that page to a file.
 
 Next, visit <http://wasabiapp.org>.
